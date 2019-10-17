@@ -89,14 +89,19 @@ button:hover {
    background-color: green;
    color: white;
 }
-/* .all-button {
-   margin: 10px;
-   padding: 10px;
-} */
-
+.form-wrapper {
+   /* width: 100%; */
+   margin: 20px auto;
+   display: flex;
+   justify-content: center;
+}
 form {
-   align-content: center;
    display: flex;
    flex-direction: column;
-   margin: 10px auto;
+   width: 40%;
+}
+input {
+   padding: 10px 50px;
+   border: 1px solid lightseagreen;
+   margin: 2px;
 }

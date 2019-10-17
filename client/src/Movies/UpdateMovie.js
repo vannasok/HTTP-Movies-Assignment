@@ -48,42 +48,53 @@ const UpdateMovie = props => {
    }
 
    return (
-      <form onSubmit={handleSubmit}>
-         <input
-            type='text'
-            name='title'
-            placeholder='title'
-            value={movie.title}
-            onChange={handleChange}
-         />
-         <input
-            type='text'
-            name='director'
-            placeholder='director'
-            value={movie.director}
-            onChange={handleChange}
-         />
-         <input
-            type='text'
-            name='metascore'
-            placeholder='metascore'
-            value={movie.metascore}
-            onChange={handleChange}
-         />
-         {movie.stars.map((starName, index) => {
-            return (
-               <input
-                  type='text'
-                  placeholder='star'
-                  value={starName}
-                  key={index}
-                  onChange={handleStar(index)}
-               />
-            );
-         })}
-         <button onClick={addStar}>Add Star</button>
-         <button type='submit'>Update Movie</button>
-      </form>
+      <div className='form-wrapper'>
+         <form onSubmit={handleSubmit}>
+            <label>Title:</label>
+            <input
+               type='text'
+               name='title'
+               placeholder='title'
+               value={movie.title}
+               onChange={handleChange}
+            />
+            <br />
+            <label>Director:</label>
+            <input
+               type='text'
+               name='director'
+               placeholder='director'
+               value={movie.director}
+               onChange={handleChange}
+            />
+            <br />
+            <label>Metascore:</label>
+            <input
+               type='text'
+               name='metascore'
+               placeholder='metascore'
+               value={movie.metascore}
+               onChange={handleChange}
+            />
+            <br />
+            <label>Stars:</label>
+            {movie.stars.map((starName, index) => {
+               return (
+                  <input
+                     type='text'
+                     placeholder='new star...'
+                     value={starName}
+                     key={index}
+                     onChange={handleStar(index)}
+                  />
+               );
+            })}
+            <div>
+               <button onClick={addStar}>Add Star</button>
+               <button type='submit'>Update Movie</button>
+            </div>
+         </form>
+      </div>
    );
 };
 
