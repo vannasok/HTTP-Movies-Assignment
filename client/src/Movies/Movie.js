@@ -50,16 +50,12 @@ export default class Movie extends React.Component {
          <div className='save-wrapper'>
             <MovieCard movie={this.state.movie} />
             <div className='all-button'>
-               <button className='save-button' onClick={this.saveMovie}>
-                  Save
-               </button>
+               <button onClick={this.saveMovie}>Save</button>
 
                <NavLink to={`/update-movie/${this.state.movie.id}`}>
                   <button className='update-button'>Update</button>
                </NavLink>
-               <button
-                  onClick={() => this.deleteMovie(this.state.movie.id)}
-                  className='delete-button'>
+               <button onClick={() => this.deleteMovie(this.state.movie.id)}>
                   Delete
                </button>
             </div>
